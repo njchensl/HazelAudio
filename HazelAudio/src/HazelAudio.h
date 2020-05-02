@@ -8,6 +8,7 @@ namespace Hazel {
 	class AudioSource
 	{
 	public:
+		AudioSource() = default;
 		~AudioSource();
 
 		bool IsLoaded() const { return m_Loaded; }
@@ -22,7 +23,6 @@ namespace Hazel {
 
 		static AudioSource LoadFromFile(const std::string& file, bool spatial = false);
 	private:
-		AudioSource() = default;
 		AudioSource(uint32_t handle, bool loaded, float length);
 
 		uint32_t m_BufferHandle = 0;
